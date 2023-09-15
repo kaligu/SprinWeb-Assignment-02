@@ -8,6 +8,7 @@ package lk.pmc.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Controller;
  * Time    : 4:07 PM
  */
 @Configuration
+@Import(JPAConfig.class)
 public class WebAppRootConfig {
     public WebAppRootConfig(){
         System.out.println("WebAppRootConfig : Initialised");

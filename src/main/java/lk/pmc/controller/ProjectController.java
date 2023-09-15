@@ -29,12 +29,13 @@ public class ProjectController {
 
     // Save Project
     @PostMapping(path = "/save", consumes = {"application/json"} )
-
-    public String saveProject(@RequestBody ProjectDTO  projectDTO ) {
-        System.out.println("method invoked");
-        System.out.println(projectDTO.getProjectID()+projectDTO.getProjectName()+"");
-        // Your logic for saving the project here
-        return "done";
+    public boolean saveProject(@RequestBody ProjectDTO  projectDTO ) {
+        System.out.println("saveProject() invoked: API Layer");
+        //validate received data null and regax
+        if(projectDTO != null) {
+            return projectService.saveProject(projectDTO);
+        }
+        return false;
     }
 
 }

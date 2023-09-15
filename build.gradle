@@ -38,10 +38,14 @@ dependencies {
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.13.3'
 
+    //Spring Data JPA
+    implementation group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.7.7'
 
+    //Hibernate
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.6.14.Final'
 
-
-
+    //MySQL Connector
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.33'
 
 }
 
