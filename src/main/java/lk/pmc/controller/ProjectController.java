@@ -1,41 +1,49 @@
-/*
-  @ Author       : C.Kaligu Jayanath
-  @ Prjoect Name : SprinWeb-Assignment-02
-  @ Date         : 9/15/2023
-  @ Time         : 4:59 PM
-*/
 package lk.pmc.controller;
+
 
 import lk.pmc.dto.ProjectDTO;
 import lk.pmc.service.ProjectService;
+import lk.pmc.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
-
-
-/**
- * @author : H.C.Kaligu Jayanath
- * Date    : 9/15/2023
- * Time    : 4:59 PM
- */
 
 @RestController
 @RequestMapping("/project")
 @CrossOrigin
 public class ProjectController {
-
     @Autowired
-    private ProjectService projectService;
+    ProjectService projectService;
 
-    // Save Project
-    @PostMapping(path = "/save", consumes = {"application/json"} )
-    public boolean saveProject(@RequestBody ProjectDTO  projectDTO ) {
-        System.out.println("saveProject() invoked: API Layer");
-        //validate received data null and regax
-        if(projectDTO != null) {
-            return projectService.saveProject(projectDTO);
-        }
-        return false;
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllCustomers(){
+        return new ResponseUtil(200,"OK",projectService.getAllProject());
     }
 
+    @ResponseStatus(HttpStatus.CREATED)//201
+
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil saveCustomer(@RequestBody ProjectDTO dto){
+        System.out.println(dto.toString());
+        projectService.saveProject(dto);
+        return new ResponseUtil(200,"Save..!",null);
+    }
+
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateCustomer(@RequestBody ProjectDTO dto){
+        projectService.updateProject(dto);
+        return new ResponseUtil(200,"Updated..!",null);
+    }
+
+    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteCustomer(@RequestParam String id){
+        projectService.deleteProject(id);
+        return new ResponseUtil(200,"Deleted..!",null);
+    }
+
+    @GetMapping(path = "/id",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchCustomer(@PathVariable String id){
+        return new ResponseUtil(200,"OK",projectService.searchProject(id));
+    }
 }

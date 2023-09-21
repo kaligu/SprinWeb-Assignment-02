@@ -1,9 +1,9 @@
 package lk.pmc.service.impl;
 
-import lk.ijse.TechLeadManageSystem.dto.TechLeadDTO;
-import lk.ijse.TechLeadManageSystem.entity.TechLead;
-import lk.ijse.TechLeadManageSystem.repo.TechLeadRepo;
-import lk.ijse.TechLeadManageSystem.service.TechLeadService;
+import lk.pmc.dto.TechLeadDTO;
+import lk.pmc.entity.TechLead;
+import lk.pmc.repo.TechLeadRepo;
+import lk.pmc.service.TechLeadService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;

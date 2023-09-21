@@ -1,6 +1,6 @@
 package lk.pmc.dto;
 
-import lk.ijse.TechLeadManageSystem.entity.Project;
+import lk.pmc.entity.Project;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

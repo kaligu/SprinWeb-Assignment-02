@@ -1,8 +1,8 @@
 package lk.pmc.controller;
 
-import lk.ijse.TechLeadManageSystem.dto.TechLeadDTO;
-import lk.ijse.TechLeadManageSystem.service.TechLeadService;
-import lk.ijse.TechLeadManageSystem.util.ResponseUtil;
+import lk.pmc.dto.TechLeadDTO;
+import lk.pmc.service.TechLeadService;
+import lk.pmc.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
