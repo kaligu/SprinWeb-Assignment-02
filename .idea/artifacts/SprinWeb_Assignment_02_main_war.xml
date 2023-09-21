@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SprinWeb-Assignment-02.main:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/SprinWeb_Assignment_02_main_war</output-path>
+    <root id="archive" name="SprinWeb-Assignment-02.main_war.war">
+      <element id="artifact" artifact-name="SprinWeb-Assignment-02.main:war exploded" />
+    </root>
+  </artifact>
+</component>

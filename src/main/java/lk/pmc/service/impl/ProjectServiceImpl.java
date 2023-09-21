@@ -8,6 +8,7 @@ package lk.pmc.service.impl;
 
 import lk.pmc.dto.ProjectDTO;
 import lk.pmc.service.ProjectService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +24,8 @@ public class ProjectServiceImpl implements ProjectService{
 
     @Override
     public boolean saveProject(ProjectDTO projectDTO) {
-        System.out.println("saveProject() invoked: Service Layer");
-        return true;
+        return false;
     }
+
+
 }
